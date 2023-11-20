@@ -15,7 +15,7 @@ content_margin_bottom = 10.0
 bg_color = Color(0, 0, 0, 0.541176)
 draw_center = false
 
-[node name="titlescreen" type="TextureRect" node_paths=PackedStringArray("_play", "_loadGameScreen")]
+[node name="titlescreen" type="TextureRect" node_paths=PackedStringArray("_play", "_musicVolume", "_loadGameScreen")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -27,6 +27,7 @@ expand_mode = 1
 stretch_mode = 6
 script = ExtResource("1_iagk3")
 _play = NodePath("MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/New Game")
+_musicVolume = NodePath("MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Volume")
 _loadGameScreen = NodePath("LoadGame")
 
 [node name="CopyrightParent" type="HBoxContainer" parent="."]

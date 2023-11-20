@@ -4,6 +4,7 @@ using System;
 public partial class titlescreen : TextureRect
 {
 	[Export] private Button _play;
+    [Export] private HSlider _musicVolume;
 
     [Export] private CanvasItem _loadGameScreen;
 
@@ -14,6 +15,7 @@ public partial class titlescreen : TextureRect
 		_play.Pressed +=
 		() => GetNode<sceneloader>("/root/sceneloader").ChangeToScene("gamescreen.tscn");
         _audioBusId = AudioServer.GetBusIndex("Music");
+        _musicVolume.Value = Mathf.DbToLinear(AudioServer.GetBusVolumeDb(_audioBusId));
     }
 
 	public void ExitGame()

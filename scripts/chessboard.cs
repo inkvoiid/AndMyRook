@@ -28,8 +28,10 @@ public partial class chessboard : Node
     private RayCast3D _raycast = new RayCast3D();
 	private Vector3 _bounds;
 
-	// Private
-	private Basis _identityBasis = Basis.Identity;
+    [Export] float rayLength = 100f;
+
+    // Private
+    private Basis _identityBasis = Basis.Identity;
 
 	// Called when the node enters the scene tree for the first time.
 	// ? The equivalent of the start function in Unity
@@ -54,22 +56,33 @@ public partial class chessboard : Node
 	// ? The equivalent of the update function in Unity
 	public override void _Process(double delta)
 	{
-		// TODO - Check if escape is pressed
+    }
 
-		// TODO - Raycast to highlight a square when the mouse is over it
+    public override void _PhysicsProcess(double delta)
+    {
+        // TODO - Raycast to highlight a square when the mouse is over it
 
+        PhysicsDirectSpaceState3D spaceState = GetViewport().World3D.DirectSpaceState;
         Vector2 mousePos = GetViewport().GetMousePosition();
 
-		// Set ray origin and direction
+        // Set ray origin and direction
         Vector3 rayOrigin = _currentCamera.ProjectRayOrigin(mousePos);
         Vector3 rayDirection = _currentCamera.ProjectRayNormal(mousePos);
+        Vector3 rayEnd = rayOrigin + rayDirection * rayLength;
+        PhysicsRayQueryParameters3D rayQuery = PhysicsRayQueryParameters3D.Create(rayOrigin, rayEnd);
+		
+		rayQuery.CollideWithAreas = true;
 
+		var rayResult = spaceState.IntersectRay(rayQuery);
 
-		var space = GetViewport().World3D.DirectSpaceState;
+        if (rayResult.Count > 0)
+        {
+			GD.Print(rayResult);
+        }
 
     }
 
-	private void GenerateAllTiles(float tileSize, int tileCountX, int tileCountY)
+    private void GenerateAllTiles(float tileSize, int tileCountX, int tileCountY)
     {
 		_bounds = new Vector3((tileCountX / 2) * (tileSize * 2), 0, (tileCountY / 2) * (tileSize * 2)) + _boardCenter;
 		_tiles = new Node3D[tileCountX, tileCountY];

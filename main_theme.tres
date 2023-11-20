@@ -59,3 +59,4 @@ HSlider/icons/grabber = ExtResource("2_au4ng")
 HSlider/icons/grabber_disabled = ExtResource("2_au4ng")
 HSlider/icons/grabber_highlight = ExtResource("2_au4ng")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_dkcdr")
+TooltipLabel/font_sizes/font_size = 28
