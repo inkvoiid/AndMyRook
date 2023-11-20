@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://8gnvfq15bx23"]
+
+[ext_resource type="PackedScene" uid="uid://kspvi6aditl5" path="res://assets/andmyrook/models/pieces/basic/pawn.gltf" id="1_mpq6j"]
+
+[node name="pawn" instance=ExtResource("1_mpq6j")]

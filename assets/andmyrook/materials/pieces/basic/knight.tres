@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d201i7uqxjul"]
+
+[ext_resource type="Texture2D" uid="uid://hwr7uml5su5l" path="res://assets/andmyrook/textures/pieces/basic/knight.png" id="1_5b5mh"]
+
+[resource]
+resource_name = "material_0"
+transparency = 2
+alpha_scissor_threshold = 0.05
+alpha_antialiasing_mode = 0
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_5b5mh")
+texture_filter = 0
+texture_repeat = false

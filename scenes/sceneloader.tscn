@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfqv20wi852dt"]
+
+[ext_resource type="Script" path="res://scripts/scenes/sceneloader.cs" id="1_ga83e"]
+
+[node name="sceneloader" type="Node"]
+script = ExtResource("1_ga83e")
+_sceneFolder = "scenes"

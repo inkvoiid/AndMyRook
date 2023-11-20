@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b46aq67ov4kgl"]
+
+[ext_resource type="PackedScene" uid="uid://c01oatwq4opgy" path="res://assets/andmyrook/models/pieces/basic/bishop.gltf" id="1_7pljf"]
+
+[node name="bishop" instance=ExtResource("1_7pljf")]

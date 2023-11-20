@@ -1,0 +1,189 @@
+[gd_scene load_steps=19 format=3 uid="uid://bxqpxjll382rd"]
+
+[ext_resource type="Shader" path="res://assets/andmyrook/shaders/sky.gdshader" id="1_htuyp"]
+[ext_resource type="PackedScene" uid="uid://cj4hy6lb4w6jm" path="res://scenes/inherited/boards/stone8x8.tscn" id="2_7qyg3"]
+[ext_resource type="Texture2D" uid="uid://l4r2uslo8bwd" path="res://assets/andmyrook/textures/sky.png" id="2_hl2bw"]
+[ext_resource type="Texture2D" uid="uid://1vos8hiv2o13" path="res://assets/andmyrook/textures/teamoverlayvines.png" id="3_2jvyq"]
+[ext_resource type="PackedScene" uid="uid://8gnvfq15bx23" path="res://scenes/inherited/pieces/basic/pawn.tscn" id="3_p7rxl"]
+[ext_resource type="Texture2D" uid="uid://beb6blwyfgis2" path="res://assets/andmyrook/textures/teamoverlay.png" id="4_ojbd4"]
+[ext_resource type="Material" uid="uid://hov052yexyw2" path="res://assets/andmyrook/materials/gui/backgroundblur.tres" id="5_6s25s"]
+[ext_resource type="Script" path="res://scripts/chessboard.cs" id="5_pmakg"]
+[ext_resource type="PackedScene" uid="uid://dovoagcwiv6y4" path="res://scenes/inherited/boards/tile.tscn" id="6_ihpvu"]
+[ext_resource type="Theme" uid="uid://ckdf4egirrne8" path="res://main_theme.tres" id="6_ps803"]
+[ext_resource type="Script" path="res://scripts/gui/pausescreen.cs" id="7_0bye8"]
+[ext_resource type="Material" uid="uid://dd0f35xg7iodt" path="res://assets/andmyrook/materials/boards/tile.tres" id="7_oidmu"]
+
+[sub_resource type="Gradient" id="Gradient_fxkop"]
+offsets = PackedFloat32Array(0, 0.196429, 0.848214, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.176471, 0.152941, 0.196078, 1, 0.768627, 0.843137, 0.882353, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qppq7"]
+gradient = SubResource("Gradient_fxkop")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2namy"]
+shader = ExtResource("1_htuyp")
+shader_parameter/skyColour = Color(0.768627, 0.909804, 0.976471, 1)
+shader_parameter/horizonColour = Color(0.839216, 0.886275, 0.992157, 1)
+shader_parameter/skyTexture = ExtResource("2_hl2bw")
+
+[sub_resource type="Sky" id="Sky_i3nx8"]
+sky_material = SubResource("ShaderMaterial_2namy")
+
+[sub_resource type="Environment" id="Environment_lw2kj"]
+background_mode = 2
+sky = SubResource("Sky_i3nx8")
+ambient_light_source = 3
+reflected_light_source = 2
+tonemap_mode = 3
+tonemap_exposure = 0.56
+tonemap_white = 0.45
+ssao_enabled = true
+ssao_radius = 4.34
+ssao_intensity = 3.86
+ssil_enabled = true
+ssil_radius = 0.63
+sdfgi_enabled = true
+sdfgi_bounce_feedback = 0.93
+sdfgi_min_cell_size = 0.0195313
+glow_enabled = true
+glow_levels/1 = 1.0
+glow_levels/2 = 1.0
+glow_levels/4 = 1.0
+glow_levels/6 = 1.0
+glow_levels/7 = 1.0
+glow_normalized = true
+glow_bloom = 0.1
+glow_blend_mode = 1
+fog_enabled = true
+fog_light_color = Color(0.705882, 0.756863, 0.776471, 1)
+fog_light_energy = 0.0
+fog_sun_scatter = 1.0
+fog_density = 0.0244
+fog_aerial_perspective = 0.856
+fog_sky_affect = 0.0
+fog_height = 0.2
+fog_height_density = 2.0718
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0787
+volumetric_fog_albedo = Color(0.870588, 0.996078, 0.996078, 1)
+volumetric_fog_anisotropy = -0.57
+volumetric_fog_length = 17.73
+volumetric_fog_ambient_inject = 1.22
+volumetric_fog_sky_affect = 0.065
+adjustment_enabled = true
+adjustment_color_correction = SubResource("GradientTexture1D_qppq7")
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_p5h1p"]
+color = Color(1, 1, 1, 0.501961)
+thickness = 3
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Node" type="Node" parent="."]
+
+[node name="CameraRotator" type="Node" parent="Node"]
+
+[node name="Camera3D" type="Camera3D" parent="Node/CameraRotator"]
+transform = Transform3D(-1, -6.42483e-08, 5.92866e-08, 0, 0.67816, 0.734915, -8.74228e-08, 0.734915, -0.67816, 0, 3.5, -4)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Node"]
+environment = SubResource("Environment_lw2kj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node"]
+transform = Transform3D(0.698415, 0.340401, -0.629558, 7.69013e-08, 0.879649, 0.475624, 0.715693, -0.332183, 0.61436, 0, 1, 0)
+shadow_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Node"]
+
+[node name="vineoverlay" type="TextureRect" parent="Node/CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_2jvyq")
+
+[node name="turnoverlay" type="TextureRect" parent="Node/CanvasLayer"]
+modulate = Color(0.0862745, 0.0862745, 0.0862745, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_ojbd4")
+
+[node name="PauseScreen" type="ColorRect" parent="Node/CanvasLayer"]
+material = ExtResource("5_6s25s")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_ps803")
+script = ExtResource("7_0bye8")
+
+[node name="CenterContainer" type="CenterContainer" parent="Node/CanvasLayer/PauseScreen"]
+layout_mode = 2
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Node/CanvasLayer/PauseScreen/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="Node/CanvasLayer/PauseScreen/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Paused"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="HSeparator" type="HSeparator" parent="Node/CanvasLayer/PauseScreen/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_p5h1p")
+
+[node name="Button" type="Button" parent="Node/CanvasLayer/PauseScreen/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Back To Game"
+
+[node name="Button2" type="Button" parent="Node/CanvasLayer/PauseScreen/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit To Castle"
+
+[node name="Label2" type="Label" parent="Node/CanvasLayer/PauseScreen/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Music Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Volume" type="HSlider" parent="Node/CanvasLayer/PauseScreen/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "The volume of the background music."
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="Chessboard" parent="." instance=ExtResource("2_7qyg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.125, 0)
+
+[node name="Pieces" type="Node" parent="Chessboard"]
+
+[node name="pawn" parent="Chessboard/Pieces" instance=ExtResource("3_p7rxl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 0, -1.25)
+
+[node name="Controller" type="Node" parent="Chessboard" node_paths=PackedStringArray("_chessboard")]
+script = ExtResource("5_pmakg")
+_tileScene = ExtResource("6_ihpvu")
+_tileMaterial = ExtResource("7_oidmu")
+_tileSize = 0.5
+_yOffset = 0.26
+_boardCenter = Vector3(-0.5, 0, -0.5)
+_chessboard = NodePath("..")
+
+[connection signal="pressed" from="Node/CanvasLayer/PauseScreen/CenterContainer/VBoxContainer/Button" to="Node/CanvasLayer/PauseScreen" method="ResumeGame"]
+[connection signal="pressed" from="Node/CanvasLayer/PauseScreen/CenterContainer/VBoxContainer/Button2" to="Node/CanvasLayer/PauseScreen" method="QuitMatch"]
+[connection signal="value_changed" from="Node/CanvasLayer/PauseScreen/CenterContainer/VBoxContainer/Volume" to="Node/CanvasLayer/PauseScreen" method="OnMusicVolumeChanged"]

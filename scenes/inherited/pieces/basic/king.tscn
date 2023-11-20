@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://yulgm08xjmhj"]
+
+[ext_resource type="PackedScene" uid="uid://boa7vfy5ya2e6" path="res://assets/andmyrook/models/pieces/basic/king.gltf" id="1_q46w4"]
+
+[node name="king" instance=ExtResource("1_q46w4")]

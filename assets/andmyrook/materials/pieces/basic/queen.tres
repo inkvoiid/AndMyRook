@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bi6s3r32cuvw1"]
+
+[ext_resource type="Texture2D" uid="uid://diiarx423q8r6" path="res://assets/andmyrook/textures/pieces/basic/queen.png" id="1_cndtg"]
+
+[resource]
+resource_name = "material_0"
+transparency = 2
+alpha_scissor_threshold = 0.05
+alpha_antialiasing_mode = 0
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_cndtg")
+texture_filter = 0
+texture_repeat = false

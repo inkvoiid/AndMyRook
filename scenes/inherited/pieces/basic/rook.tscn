@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dob5bk635kfx3"]
+
+[ext_resource type="PackedScene" uid="uid://dxwbha5gxy2va" path="res://assets/andmyrook/models/pieces/basic/rook.gltf" id="1_0hmk7"]
+
+[node name="rook" instance=ExtResource("1_0hmk7")]

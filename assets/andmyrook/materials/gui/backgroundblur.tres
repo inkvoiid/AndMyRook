@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://hov052yexyw2"]
+
+[ext_resource type="Shader" path="res://assets/andmyrook/shaders/gui/backgroundblur.gdshader" id="1_447li"]
+
+[resource]
+shader = ExtResource("1_447li")
+shader_parameter/blur_amount = 1.7
+shader_parameter/mix_amount = 0.5
+shader_parameter/color_over = null

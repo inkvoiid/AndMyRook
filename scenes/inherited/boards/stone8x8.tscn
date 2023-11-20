@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cj4hy6lb4w6jm"]
+
+[ext_resource type="PackedScene" uid="uid://c3lqnek5lk83i" path="res://assets/andmyrook/models/boards/stone8x8.gltf" id="1_dnhno"]
+
+[node name="stone8x8" instance=ExtResource("1_dnhno")]

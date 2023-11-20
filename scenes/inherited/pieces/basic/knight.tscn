@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bi2albl5bhpfa"]
+
+[ext_resource type="PackedScene" uid="uid://fi4jrab1sht4" path="res://assets/andmyrook/models/pieces/basic/knight.gltf" id="1_omgoo"]
+
+[node name="knight" instance=ExtResource("1_omgoo")]

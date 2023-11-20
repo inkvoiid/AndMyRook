@@ -1,0 +1,61 @@
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://ckdf4egirrne8"]
+
+[ext_resource type="Texture2D" uid="uid://c01u78l5auo21" path="res://assets/andmyrook/textures/gui/buttonborder.png" id="1_kr0jc"]
+[ext_resource type="FontFile" uid="uid://cbg304bbutmq6" path="res://assets/andmyrook/fonts/Citylines-DODOd.otf" id="1_uprva"]
+[ext_resource type="Texture2D" uid="uid://bd5d1t1lb8vk4" path="res://assets/andmyrook/textures/gui/sliderhandle.png" id="2_au4ng"]
+[ext_resource type="Texture2D" uid="uid://dldti1g15i72d" path="res://assets/andmyrook/textures/gui/buttonborderhover.png" id="2_web10"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tqooo"]
+content_margin_left = 25.0
+content_margin_top = 15.0
+content_margin_right = 25.0
+content_margin_bottom = 10.0
+texture = ExtResource("1_kr0jc")
+texture_margin_left = 21.0
+texture_margin_top = 21.0
+texture_margin_right = 21.0
+texture_margin_bottom = 21.0
+region_rect = Rect2(0, 0, 72, 72)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rf040"]
+content_margin_left = 25.0
+content_margin_top = 15.0
+content_margin_right = 25.0
+content_margin_bottom = 10.0
+texture = ExtResource("2_web10")
+texture_margin_left = 21.0
+texture_margin_top = 21.0
+texture_margin_right = 21.0
+texture_margin_bottom = 21.0
+region_rect = Rect2(0, 0, 72, 72)
+modulate_color = Color(1, 1, 1, 0.517647)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5r3w"]
+content_margin_left = 25.0
+content_margin_top = 15.0
+content_margin_right = 25.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0, 0, 0.368627)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mwaa0"]
+content_margin_left = 25.0
+content_margin_top = 15.0
+content_margin_right = 25.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 1, 1, 0.172549)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dkcdr"]
+bg_color = Color(0.0588235, 0.0588235, 0.0588235, 0.8)
+
+[resource]
+default_font = ExtResource("1_uprva")
+default_font_size = 32
+Button/styles/focus = SubResource("StyleBoxTexture_tqooo")
+Button/styles/hover = SubResource("StyleBoxTexture_rf040")
+Button/styles/normal = SubResource("StyleBoxFlat_x5r3w")
+Button/styles/pressed = SubResource("StyleBoxFlat_mwaa0")
+HSlider/constants/center_grabber = 1
+HSlider/icons/grabber = ExtResource("2_au4ng")
+HSlider/icons/grabber_disabled = ExtResource("2_au4ng")
+HSlider/icons/grabber_highlight = ExtResource("2_au4ng")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_dkcdr")

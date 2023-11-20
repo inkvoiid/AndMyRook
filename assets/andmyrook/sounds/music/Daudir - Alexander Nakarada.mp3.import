@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://croq6467kq23p"
+path="res://.godot/imported/Daudir - Alexander Nakarada.mp3-0423009245105e555be2a7746a1be4e4.mp3str"
+
+[deps]
+
+source_file="res://assets/andmyrook/sounds/music/Daudir - Alexander Nakarada.mp3"
+dest_files=["res://.godot/imported/Daudir - Alexander Nakarada.mp3-0423009245105e555be2a7746a1be4e4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

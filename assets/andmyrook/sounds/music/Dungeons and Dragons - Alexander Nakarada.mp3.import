@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dv3s2tubifavl"
+path="res://.godot/imported/Dungeons and Dragons - Alexander Nakarada.mp3-e2a3f748e63f0f10c7586de9acbc25df.mp3str"
+
+[deps]
+
+source_file="res://assets/andmyrook/sounds/music/Dungeons and Dragons - Alexander Nakarada.mp3"
+dest_files=["res://.godot/imported/Dungeons and Dragons - Alexander Nakarada.mp3-e2a3f748e63f0f10c7586de9acbc25df.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

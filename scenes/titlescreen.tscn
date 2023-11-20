@@ -1,0 +1,189 @@
+[gd_scene load_steps=8 format=3 uid="uid://bi3xrioavxig4"]
+
+[ext_resource type="Script" path="res://scripts/scenes/titlescreen.cs" id="1_iagk3"]
+[ext_resource type="Texture2D" uid="uid://ceuh16phrkhf4" path="res://assets/andmyrook/textures/mainmenubackground.png" id="1_mme18"]
+[ext_resource type="Theme" uid="uid://ckdf4egirrne8" path="res://main_theme.tres" id="1_qygct"]
+[ext_resource type="Material" uid="uid://hov052yexyw2" path="res://assets/andmyrook/materials/gui/backgroundblur.tres" id="4_s1spw"]
+[ext_resource type="PackedScene" uid="uid://dewr7rmoxtujq" path="res://scenes/inherited/gui/save.tscn" id="5_mi4v3"]
+[ext_resource type="Material" uid="uid://bjte7660qnadg" path="res://assets/andmyrook/materials/gui/background.tres" id="5_xlgj0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ym38l"]
+content_margin_left = 25.0
+content_margin_top = 15.0
+content_margin_right = 25.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0, 0, 0.541176)
+draw_center = false
+
+[node name="titlescreen" type="TextureRect" node_paths=PackedStringArray("_play", "_loadGameScreen")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_qygct")
+texture = ExtResource("1_mme18")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("1_iagk3")
+_play = NodePath("MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/New Game")
+_loadGameScreen = NodePath("LoadGame")
+
+[node name="CopyrightParent" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CopyrightParent"]
+layout_mode = 2
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CopyrightParent/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="CopyrightParent/VBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "© inkvoiid 2023"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 3
+theme_override_font_sizes/font_size = 108
+text = "And My Rook!"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Continue" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ym38l")
+text = "Continue Game:
+Hello I'm Cool"
+
+[node name="New Game" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_ym38l")
+text = "New Game"
+
+[node name="Load Game" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ym38l")
+text = "Load Game"
+
+[node name="Quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_ym38l")
+text = "Quit"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Volume"
+
+[node name="Volume" type="HSlider" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "The volume of the background music."
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="LoadGame" type="ColorRect" parent="."]
+visible = false
+material = ExtResource("4_s1spw")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="LoadGame"]
+layout_mode = 2
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="LoadGame/CenterContainer"]
+material = ExtResource("5_xlgj0")
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="LoadGame/CenterContainer/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LoadGame/CenterContainer/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="LabelLoadGame" type="Label" parent="LoadGame/CenterContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Load Save"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LoadGame/CenterContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 33
+alignment = 1
+
+[node name="Save1" parent="LoadGame/CenterContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("5_mi4v3")]
+layout_mode = 2
+
+[node name="Save2" parent="LoadGame/CenterContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("5_mi4v3")]
+layout_mode = 2
+
+[node name="Save3" parent="LoadGame/CenterContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("5_mi4v3")]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="LoadGame/CenterContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/Load Game" to="." method="OpenLoadScreen"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/Quit" to="." method="ExitGame"]
+[connection signal="value_changed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Volume" to="." method="OnMusicVolumeChanged"]
+[connection signal="pressed" from="LoadGame/CenterContainer/Panel/MarginContainer/VBoxContainer/Button" to="." method="CloseLoadScreen"]

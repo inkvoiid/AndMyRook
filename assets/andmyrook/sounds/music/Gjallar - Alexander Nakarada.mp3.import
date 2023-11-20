@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bdc55m4ckfbt7"
+path="res://.godot/imported/Gjallar - Alexander Nakarada.mp3-908e34ca2f52eeb9b46905806004111e.mp3str"
+
+[deps]
+
+source_file="res://assets/andmyrook/sounds/music/Gjallar - Alexander Nakarada.mp3"
+dest_files=["res://.godot/imported/Gjallar - Alexander Nakarada.mp3-908e34ca2f52eeb9b46905806004111e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
